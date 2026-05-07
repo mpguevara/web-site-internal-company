@@ -81,6 +81,10 @@ export default async function handler(req, res) {
     message: payload.message.trim(),
   };
 
+  if (!isSupabaseEnabled() && !isSmtpEnabled()) {
+    return res.status(503).json({ error: "Servicio de contacto no configurado." });
+  }
+
   try {
     await saveLead(message);
     await sendMail(message);
