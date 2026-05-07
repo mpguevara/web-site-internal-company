@@ -15,6 +15,20 @@ Sitio web estático para presentar servicios profesionales como Ingeniero de Sof
 
 Abre `index.html` directamente en tu navegador.
 
+## Configuración de correo
+
+El formulario está preparado para enviar datos a `/api/contact`, definido en `mail-config.js`.
+Mientras no exista un servidor mail conectado, el sitio usa `mailto:` como respaldo.
+
+Para conectar SMTP, usa `server/mail-handler.example.js` como base y configura las variables de `server/.env.example`.
+
+Pasos base:
+
+```bash
+npm install
+npm start
+```
+
 ## Próximos ajustes
 
 - Afinar el objetivo comercial del sitio
