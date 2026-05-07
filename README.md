@@ -1,4 +1,4 @@
-# Sitio profesional de Mario de Jesús Paz Guevara
+# web-site-internal-company
 
 Sitio web estático para presentar servicios profesionales como Ingeniero de Software.
 
