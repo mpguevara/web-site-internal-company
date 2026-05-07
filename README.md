@@ -11,23 +11,42 @@ Sitio web estático para presentar servicios profesionales como Ingeniero de Sof
 - Secciones de experiencia, proceso y contacto
 - Formulario que prepara un correo a `mario.paz.software@gmail.com`
 
-## Cómo abrirlo
+## Desarrollo local
 
-Abre `index.html` directamente en tu navegador.
+El sitio está preparado para publicarse en Vercel.
+
+Para desarrollo local con la función `/api/contact`:
+
+```bash
+npm install
+npm run dev
+```
 
 ## Configuración de correo
 
 El formulario está preparado para enviar datos a `/api/contact`, definido en `mail-config.js`.
 Mientras no exista un servidor mail conectado, el sitio usa `mailto:` como respaldo.
 
-Para conectar SMTP, usa `server/mail-handler.example.js` como base y configura las variables de `server/.env.example`.
+En Vercel, configura estas variables de entorno para enviar correos:
 
-Pasos base:
+- `SMTP_HOST`
+- `SMTP_PORT`
+- `SMTP_SECURE`
+- `SMTP_USER`
+- `SMTP_PASS`
+- `MAIL_FROM`
+- `MAIL_TO`
 
-```bash
-npm install
-npm start
-```
+Puedes usar `.env.example` como referencia para nombres de variables.
+
+## Supabase
+
+Si queremos guardar cada contacto como lead, la función `/api/contact` también puede insertar en Supabase.
+Solo hace falta configurar:
+
+- `SUPABASE_URL`
+- `SUPABASE_SERVICE_ROLE_KEY`
+- `SUPABASE_CONTACT_TABLE`
 
 ## Próximos ajustes
 
