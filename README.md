@@ -1,5 +1,7 @@
 # web-site-internal-company
 
+Repositorio para el sitio web profesional de Mario de Jesús Paz Guevara.
+
 Sitio web estático para presentar servicios profesionales como Ingeniero de Software.
 
 ## Contenido
