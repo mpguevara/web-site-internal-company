@@ -1,0 +1,11 @@
+# Sistema operativo
+Thumbs.db
+Desktop.ini
+
+# Editores
+.vscode/
+.idea/
+
+# Archivos temporales
+*.tmp
+*.log
