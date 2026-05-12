@@ -7,6 +7,15 @@ const KNOWLEDGE_MAX_LENGTH = 12000;
 
 const normalizeMessage = (value) => String(value || "").trim().slice(0, MAX_MESSAGE_LENGTH);
 const knowledgePath = path.join(process.cwd(), "knowledge", "novacore.md");
+const getModel = () => {
+  const configuredModel = process.env.OPENAI_MODEL || "gpt-5-mini";
+
+  if (configuredModel === "gpt-5.1-mini") {
+    return "gpt-5-mini";
+  }
+
+  return configuredModel;
+};
 
 const loadKnowledge = async () => {
   try {
@@ -72,7 +81,7 @@ export default async function handler(req, res) {
     });
 
     const response = await client.responses.create({
-      model: process.env.OPENAI_MODEL || "gpt-5.1-mini",
+      model: getModel(),
       instructions: [
         systemInstructions,
         `Idioma de interfaz actual: ${language}.`,
@@ -89,6 +98,7 @@ export default async function handler(req, res) {
     console.error("Assistant error", error);
     return res.status(500).json({
       error: "No se pudo generar una respuesta en este momento.",
+      detail: process.env.NODE_ENV === "development" ? error.message : undefined,
     });
   }
 }
