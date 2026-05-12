@@ -4,7 +4,7 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "vercel dev"
+    "check": "node --check script.js && node --check translations.js && node --check api/contact.js"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.43.4",
