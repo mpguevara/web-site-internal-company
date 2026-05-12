@@ -1,12 +1,13 @@
 # web-site-internal-company
 
-Repositorio para el sitio web profesional de Mario de Jesús Paz Guevara.
+Repositorio para el sitio web corporativo de Novacore Labs.
 
-Sitio web estático para presentar servicios profesionales como Ingeniero de Software.
+Novacore Labs es el nombre comercial de Novacore Systems S.A. de C.V.
+El sitio presenta servicios de software empresarial, automatización, integraciones y consultoría técnica.
 
 ## Contenido
 
-- Página principal con presentación profesional
+- Página principal con identidad de Novacore Labs
 - Servicios de desarrollo web, APIs, automatización y consultoría
 - Secciones de experiencia, proceso y contacto
 - Formulario que prepara un correo a `mario.paz.software@gmail.com`
@@ -53,4 +54,4 @@ Solo hace falta configurar:
 - Afinar el objetivo comercial del sitio
 - Agregar enlaces reales de LinkedIn y GitHub
 - Ajustar servicios, experiencia y propuesta de valor
-- Preparar publicación en GitHub Pages, Vercel o Netlify
+- Ajustar dominio, correo corporativo y publicación en Vercel
