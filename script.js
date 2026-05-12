@@ -6,6 +6,12 @@ const formNote = document.querySelector("#form-note");
 const mailSettings = window.MAIL_SETTINGS || {};
 const i18n = window.SITE_I18N || { defaultLanguage: "es-419", languages: {} };
 const languageSelect = document.querySelector("#language-select");
+const assistantToggle = document.querySelector("#assistant-toggle");
+const assistantPanel = document.querySelector("#assistant-panel");
+const assistantClose = document.querySelector("#assistant-close");
+const assistantMessages = document.querySelector("#assistant-messages");
+const assistantForm = document.querySelector("#assistant-form");
+const assistantInput = document.querySelector("#assistant-input");
 
 year.textContent = new Date().getFullYear();
 
@@ -64,6 +70,7 @@ applyLanguage(getInitialLanguage());
 
 languageSelect.addEventListener("change", () => {
   applyLanguage(languageSelect.value);
+  resetAssistantWelcome();
 });
 
 menuButton.addEventListener("click", () => {
@@ -132,5 +139,91 @@ form.addEventListener("submit", async (event) => {
     }
 
     formNote.textContent = getMessages().formError;
+  }
+});
+
+const addAssistantMessage = (text, type = "assistant") => {
+  const message = document.createElement("div");
+  message.className = `assistant-message ${type}`.trim();
+  message.textContent = text;
+  assistantMessages.append(message);
+  assistantMessages.scrollTop = assistantMessages.scrollHeight;
+  return message;
+};
+
+const resetAssistantWelcome = () => {
+  if (!assistantMessages) {
+    return;
+  }
+
+  assistantMessages.innerHTML = "";
+  addAssistantMessage(getMessages().assistantWelcome);
+};
+
+const setAssistantOpen = (isOpen) => {
+  assistantPanel.hidden = !isOpen;
+  assistantToggle.setAttribute("aria-expanded", String(isOpen));
+
+  if (isOpen && !assistantMessages.children.length) {
+    resetAssistantWelcome();
+  }
+
+  if (isOpen) {
+    assistantInput.focus();
+  }
+};
+
+assistantToggle.addEventListener("click", () => {
+  setAssistantOpen(assistantPanel.hidden);
+});
+
+assistantClose.addEventListener("click", () => {
+  setAssistantOpen(false);
+});
+
+assistantForm.addEventListener("submit", async (event) => {
+  event.preventDefault();
+
+  const text = assistantInput.value.trim();
+  if (!text) {
+    return;
+  }
+
+  const messages = getMessages();
+  addAssistantMessage(text, "user");
+  assistantInput.value = "";
+  assistantInput.disabled = true;
+
+  const pending = addAssistantMessage(messages.assistantThinking);
+
+  try {
+    const response = await fetch("/api/assistant", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        message: text,
+        language: languageSelect.value,
+      }),
+    });
+
+    const data = await response.json().catch(() => ({}));
+
+    if (response.status === 503) {
+      pending.textContent = messages.assistantUnavailable;
+      return;
+    }
+
+    if (!response.ok) {
+      throw new Error(data.error || "Assistant request failed");
+    }
+
+    pending.textContent = data.message || messages.assistantError;
+  } catch (error) {
+    pending.textContent = getMessages().assistantError;
+  } finally {
+    assistantInput.disabled = false;
+    assistantInput.focus();
   }
 });

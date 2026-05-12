@@ -304,6 +304,26 @@
       <a href="#inicio" data-i18n="backTop">Volver arriba</a>
     </footer>
 
+    <section class="assistant-widget" aria-label="Asistente virtual" data-i18n-aria-label="assistantAria">
+      <button class="assistant-toggle" id="assistant-toggle" type="button" aria-expanded="false">
+        <span data-i18n="assistantToggle">Ayuda inmediata</span>
+      </button>
+      <div class="assistant-panel" id="assistant-panel" hidden>
+        <div class="assistant-header">
+          <div>
+            <strong data-i18n="assistantTitle">Asistente Novacore</strong>
+            <p data-i18n="assistantSubtitle">Responde dudas sobre soluciones y servicios.</p>
+          </div>
+          <button class="assistant-close" id="assistant-close" type="button" aria-label="Cerrar asistente" data-i18n-aria-label="assistantCloseAria">×</button>
+        </div>
+        <div class="assistant-messages" id="assistant-messages" aria-live="polite"></div>
+        <form class="assistant-form" id="assistant-form">
+          <input id="assistant-input" name="assistant-message" type="text" autocomplete="off" data-i18n-placeholder="assistantPlaceholder" placeholder="Escribe tu pregunta..." required />
+          <button type="submit" data-i18n="assistantSend">Enviar</button>
+        </form>
+      </div>
+    </section>
+
     <script src="mail-config.js"></script>
     <script src="translations.js"></script>
     <script src="script.js"></script>

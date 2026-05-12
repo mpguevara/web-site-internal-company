@@ -4,10 +4,11 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "check": "node --check script.js && node --check translations.js && node --check api/contact.js"
+    "check": "node --check script.js && node --check translations.js && node --check api/contact.js && node --check api/assistant.js"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.43.4",
-    "nodemailer": "^6.9.13"
+    "nodemailer": "^6.9.13",
+    "openai": "^6.37.0"
   }
 }
