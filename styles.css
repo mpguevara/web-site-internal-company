@@ -444,7 +444,7 @@ h3 {
 
 .service-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 16px;
 }
 
@@ -486,6 +486,14 @@ h3 {
 
 .service-card:nth-child(4) .icon {
   background: linear-gradient(135deg, #7c8da3, #111927);
+}
+
+.service-card:nth-child(5) .icon {
+  background: linear-gradient(135deg, #10bfe8, #075fe4);
+}
+
+.service-card:nth-child(6) .icon {
+  background: linear-gradient(135deg, #111927, #10bfe8);
 }
 
 .service-card p,
