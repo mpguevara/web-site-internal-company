@@ -1,8 +1,22 @@
 import OpenAI from "openai";
+import { readFile } from "node:fs/promises";
+import path from "node:path";
 
 const MAX_MESSAGE_LENGTH = 1200;
+const KNOWLEDGE_MAX_LENGTH = 12000;
 
 const normalizeMessage = (value) => String(value || "").trim().slice(0, MAX_MESSAGE_LENGTH);
+const knowledgePath = path.join(process.cwd(), "knowledge", "novacore.md");
+
+const loadKnowledge = async () => {
+  try {
+    const content = await readFile(knowledgePath, "utf8");
+    return content.slice(0, KNOWLEDGE_MAX_LENGTH);
+  } catch (error) {
+    console.error("Knowledge base unavailable", error);
+    return "";
+  }
+};
 
 const systemInstructions = `
 Eres el asistente virtual de Novacore Labs, nombre comercial de Novacore Systems S.A. de C.V.
@@ -52,13 +66,18 @@ export default async function handler(req, res) {
   }
 
   try {
+    const knowledge = await loadKnowledge();
     const client = new OpenAI({
       apiKey: process.env.OPENAI_API_KEY,
     });
 
     const response = await client.responses.create({
       model: process.env.OPENAI_MODEL || "gpt-5.1-mini",
-      instructions: `${systemInstructions}\nIdioma de interfaz actual: ${language}.`,
+      instructions: [
+        systemInstructions,
+        `Idioma de interfaz actual: ${language}.`,
+        knowledge ? `Base de conocimiento de Novacore Labs:\n${knowledge}` : "",
+      ].join("\n\n"),
       input: message,
       max_output_tokens: 420,
     });

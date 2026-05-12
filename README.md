@@ -12,6 +12,7 @@ El sitio presenta servicios de software empresarial, automatización, integracio
 - Secciones de experiencia, proceso y contacto
 - Selector multiidioma con español LATAM como idioma predeterminado
 - Formulario que prepara un correo a `mario.paz.software@gmail.com`
+- Asistente virtual alimentado por `knowledge/novacore.md`
 
 ## Desarrollo local
 
