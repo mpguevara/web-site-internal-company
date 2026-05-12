@@ -1,13 +1,14 @@
 <!doctype html>
-<html lang="es">
+<html lang="es-419">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta
       name="description"
+      data-i18n-content="metaDescription"
       content="Novacore Labs desarrolla soluciones digitales, automatización, APIs, sistemas internos y arquitectura de software para empresas."
     />
-    <title>Novacore Labs | Soluciones de Software Empresarial</title>
+    <title data-i18n="pageTitle">Novacore Labs | Soluciones de Software Empresarial</title>
     <link rel="icon" href="assets/favicon.ico" sizes="any" />
     <link rel="icon" type="image/png" href="assets/favicon.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -20,78 +21,95 @@
   </head>
   <body>
     <header class="site-header">
-      <a class="brand" href="#inicio" aria-label="Ir al inicio">
+      <a class="brand" href="#inicio" aria-label="Ir al inicio" data-i18n-aria-label="brandAria">
         <img class="brand-logo" src="assets/novacore-labs-logo-transparent.png" alt="Novacore Labs" />
         <span class="brand-text">
           <small>Novacore Systems S.A. de C.V.</small>
         </span>
       </a>
-      <nav class="main-nav" aria-label="Navegación principal">
-        <a href="#servicios">Servicios</a>
-        <a href="#experiencia">Experiencia</a>
-        <a href="#proceso">Proceso</a>
-        <a href="#contacto">Contacto</a>
+      <nav class="main-nav" aria-label="Navegación principal" data-i18n-aria-label="navAria">
+        <a href="#servicios" data-i18n="navServices">Servicios</a>
+        <a href="#experiencia" data-i18n="navExperience">Experiencia</a>
+        <a href="#proceso" data-i18n="navProcess">Proceso</a>
+        <a href="#contacto" data-i18n="navContact">Contacto</a>
       </nav>
-      <a class="header-action" href="#contacto">Hablemos</a>
-      <button class="menu-button" type="button" aria-label="Abrir menú" aria-expanded="false">
-        <span></span>
-        <span></span>
-      </button>
+      <div class="header-tools">
+        <label class="language-switcher" for="language-select">
+          <span data-i18n="languageLabel">Idioma</span>
+          <select id="language-select" name="language" aria-label="Seleccionar idioma" data-i18n-aria-label="languageAria">
+            <option value="es-419">ES LatAm</option>
+            <option value="en">English</option>
+            <option value="zh">中文</option>
+            <option value="hi">हिन्दी</option>
+            <option value="ar">العربية</option>
+            <option value="pt">Português</option>
+            <option value="fr">Français</option>
+            <option value="de">Deutsch</option>
+            <option value="ja">日本語</option>
+            <option value="it">Italiano</option>
+          </select>
+        </label>
+        <a class="header-action" href="#contacto" data-i18n="headerAction">Hablemos</a>
+        <button class="menu-button" type="button" aria-label="Abrir menú" aria-expanded="false" data-i18n-aria-label="menuAria">
+          <span></span>
+          <span></span>
+        </button>
+      </div>
     </header>
 
     <main id="inicio">
       <section class="hero section-band">
         <div class="hero-copy">
-          <p class="eyebrow">Novacore Labs</p>
-          <h1>Ingeniería de software para empresas que necesitan operar mejor.</h1>
-          <p class="hero-text">
+          <p class="eyebrow" data-i18n="heroEyebrow">Novacore Labs</p>
+          <h1 data-i18n="heroTitle">Ingeniería de software para empresas que necesitan operar mejor.</h1>
+          <p class="hero-text" data-i18n="heroText">
             Diseñamos y construimos plataformas web, integraciones, automatizaciones y sistemas internos
             con una base técnica sólida, lista para crecer con tu operación.
           </p>
-          <div class="hero-signature" aria-label="Presentación profesional">
-            <span>Software empresarial</span>
-            <span>Automatización, datos e integraciones</span>
+          <div class="hero-signature" aria-label="Presentación profesional" data-i18n-aria-label="heroSignatureAria">
+            <span data-i18n="heroTagOne">Software empresarial</span>
+            <span data-i18n="heroTagTwo">Automatización, datos e integraciones</span>
           </div>
           <div class="hero-actions">
-            <a class="button primary" href="#contacto">Solicitar propuesta</a>
-            <a class="button secondary" href="#servicios">Ver servicios</a>
+            <a class="button primary" href="#contacto" data-i18n="heroPrimary">Solicitar propuesta</a>
+            <a class="button secondary" href="#servicios" data-i18n="heroSecondary">Ver servicios</a>
           </div>
-          <dl class="hero-stats" aria-label="Indicadores profesionales">
+          <dl class="hero-stats" aria-label="Indicadores profesionales" data-i18n-aria-label="heroStatsAria">
             <div>
-              <dt>Core</dt>
-              <dd>arquitectura y producto</dd>
+              <dt data-i18n="statOneTitle">Core</dt>
+              <dd data-i18n="statOneText">arquitectura y producto</dd>
             </div>
             <div>
-              <dt>Labs</dt>
-              <dd>experimentación aplicada</dd>
+              <dt data-i18n="statTwoTitle">Labs</dt>
+              <dd data-i18n="statTwoText">experimentación aplicada</dd>
             </div>
             <div>
-              <dt>Systems</dt>
-              <dd>soluciones operativas</dd>
+              <dt data-i18n="statThreeTitle">Systems</dt>
+              <dd data-i18n="statThreeText">soluciones operativas</dd>
             </div>
           </dl>
         </div>
-        <div class="hero-visual" aria-label="Identidad visual de Novacore Labs">
+        <div class="hero-visual" aria-label="Identidad visual de Novacore Labs" data-i18n-aria-label="heroVisualAria">
           <div class="logo-stage">
             <img src="assets/novacore-labs-logo.png" alt="Novacore Labs" />
           </div>
         </div>
       </section>
 
-      <section class="intro-strip" aria-label="Especialidades">
-        <span>Software empresarial</span>
-        <span>Arquitectura cloud</span>
-        <span>APIs e integraciones</span>
-        <span>Automatización</span>
-        <span>Datos operativos</span>
-        <span>Consultoría técnica</span>
+      <section class="intro-strip" aria-label="Especialidades" data-i18n-aria-label="specialtiesAria">
+        <span data-i18n="specialtyOne">Software empresarial</span>
+        <span data-i18n="specialtyTwo">Arquitectura cloud</span>
+        <span data-i18n="specialtyThree">APIs e integraciones</span>
+        <span data-i18n="specialtyFour">Automatización</span>
+        <span data-i18n="specialtyFive">Datos operativos</span>
+        <span data-i18n="specialtySix">Consultoría técnica</span>
       </section>
 
       <section id="servicios" class="section">
         <div class="section-heading">
-          <p class="eyebrow">Servicios</p>
-          <h2>Soluciones digitales con precisión técnica y visión operativa.</h2>
-          <p>
+          <p class="eyebrow" data-i18n="servicesEyebrow">Servicios</p>
+          <h2 data-i18n="servicesTitle">Soluciones digitales con precisión técnica y visión operativa.</h2>
+          <p data-i18n="servicesText">
             Acompañamos a equipos que necesitan ordenar procesos, conectar sistemas y lanzar herramientas
             confiables sin perder claridad en el camino.
           </p>
@@ -100,86 +118,86 @@
         <div class="service-grid">
           <article class="service-card">
             <span class="icon" aria-hidden="true">01</span>
-            <h3>Aplicaciones web empresariales</h3>
-            <p>Interfaces rápidas, responsivas y conectadas a backend para productos, portales y sistemas internos.</p>
+            <h3 data-i18n="serviceOneTitle">Aplicaciones web empresariales</h3>
+            <p data-i18n="serviceOneText">Interfaces rápidas, responsivas y conectadas a backend para productos, portales y sistemas internos.</p>
           </article>
           <article class="service-card">
             <span class="icon" aria-hidden="true">02</span>
-            <h3>APIs e integraciones</h3>
-            <p>Servicios REST, integraciones con terceros, autenticación, pagos, reportes y sincronización de datos.</p>
+            <h3 data-i18n="serviceTwoTitle">APIs e integraciones</h3>
+            <p data-i18n="serviceTwoText">Servicios REST, integraciones con terceros, autenticación, pagos, reportes y sincronización de datos.</p>
           </article>
           <article class="service-card">
             <span class="icon" aria-hidden="true">03</span>
-            <h3>Automatización operativa</h3>
-            <p>Flujos que eliminan tareas manuales, conectan herramientas y hacen más confiables los procesos diarios.</p>
+            <h3 data-i18n="serviceThreeTitle">Automatización operativa</h3>
+            <p data-i18n="serviceThreeText">Flujos que eliminan tareas manuales, conectan herramientas y hacen más confiables los procesos diarios.</p>
           </article>
           <article class="service-card">
             <span class="icon" aria-hidden="true">04</span>
-            <h3>Arquitectura y consultoría</h3>
-            <p>Revisión de arquitectura, selección de stack, diagnóstico de rendimiento y planes de mejora realistas.</p>
+            <h3 data-i18n="serviceFourTitle">Arquitectura y consultoría</h3>
+            <p data-i18n="serviceFourText">Revisión de arquitectura, selección de stack, diagnóstico de rendimiento y planes de mejora realistas.</p>
           </article>
         </div>
       </section>
 
       <section id="experiencia" class="section split-section">
         <div>
-          <p class="eyebrow">Experiencia</p>
-          <h2>De la necesidad operativa al sistema funcionando.</h2>
-          <p>
+          <p class="eyebrow" data-i18n="experienceEyebrow">Experiencia</p>
+          <h2 data-i18n="experienceTitle">De la necesidad operativa al sistema funcionando.</h2>
+          <p data-i18n="experienceText">
             Novacore Labs puede incorporarse a iniciativas existentes o liderar el desarrollo desde cero,
             cuidando requisitos, arquitectura, código mantenible, seguridad, despliegue y soporte.
           </p>
         </div>
         <div class="feature-list">
           <article>
-            <h3>Producto y ejecución</h3>
-            <p>Definición de alcance, roadmap técnico y entregas iterativas para validar rápido sin perder calidad.</p>
+            <h3 data-i18n="featureOneTitle">Producto y ejecución</h3>
+            <p data-i18n="featureOneText">Definición de alcance, roadmap técnico y entregas iterativas para validar rápido sin perder calidad.</p>
           </article>
           <article>
-            <h3>Base técnica sólida</h3>
-            <p>Arquitecturas limpias, bases de datos bien modeladas, pruebas útiles y despliegues reproducibles.</p>
+            <h3 data-i18n="featureTwoTitle">Base técnica sólida</h3>
+            <p data-i18n="featureTwoText">Arquitecturas limpias, bases de datos bien modeladas, pruebas útiles y despliegues reproducibles.</p>
           </article>
           <article>
-            <h3>Comunicación clara</h3>
-            <p>Avances visibles, decisiones documentadas y recomendaciones honestas para que siempre sepas dónde estás.</p>
+            <h3 data-i18n="featureThreeTitle">Comunicación clara</h3>
+            <p data-i18n="featureThreeText">Avances visibles, decisiones documentadas y recomendaciones honestas para que siempre sepas dónde estás.</p>
           </article>
         </div>
       </section>
 
       <section id="proceso" class="section process-section">
         <div class="section-heading">
-          <p class="eyebrow">Proceso</p>
-          <h2>Una forma simple de empezar bien.</h2>
+          <p class="eyebrow" data-i18n="processEyebrow">Proceso</p>
+          <h2 data-i18n="processTitle">Una forma simple de empezar bien.</h2>
         </div>
         <div class="timeline">
           <article>
             <span>1</span>
-            <h3>Descubrimiento</h3>
-            <p>Revisamos objetivos, usuarios, restricciones y criterios de éxito.</p>
+            <h3 data-i18n="processOneTitle">Descubrimiento</h3>
+            <p data-i18n="processOneText">Revisamos objetivos, usuarios, restricciones y criterios de éxito.</p>
           </article>
           <article>
             <span>2</span>
-            <h3>Propuesta</h3>
-            <p>Defino alcance, entregables, tecnología, tiempos y presupuesto estimado.</p>
+            <h3 data-i18n="processTwoTitle">Propuesta</h3>
+            <p data-i18n="processTwoText">Defino alcance, entregables, tecnología, tiempos y presupuesto estimado.</p>
           </article>
           <article>
             <span>3</span>
-            <h3>Construcción</h3>
-            <p>Desarrollo por iteraciones, con demos y ajustes según prioridad.</p>
+            <h3 data-i18n="processThreeTitle">Construcción</h3>
+            <p data-i18n="processThreeText">Desarrollo por iteraciones, con demos y ajustes según prioridad.</p>
           </article>
           <article>
             <span>4</span>
-            <h3>Lanzamiento</h3>
-            <p>Publicación, documentación, monitoreo inicial y siguientes pasos.</p>
+            <h3 data-i18n="processFourTitle">Lanzamiento</h3>
+            <p data-i18n="processFourText">Publicación, documentación, monitoreo inicial y siguientes pasos.</p>
           </article>
         </div>
       </section>
 
       <section id="contacto" class="contact-section section-band">
         <div class="contact-copy">
-          <p class="eyebrow">Contacto</p>
-          <h2>Conversemos sobre tu próximo proyecto.</h2>
-          <p>
+          <p class="eyebrow" data-i18n="contactEyebrow">Contacto</p>
+          <h2 data-i18n="contactTitle">Conversemos sobre tu próximo proyecto.</h2>
+          <p data-i18n="contactText">
             Cuéntanos qué necesitas construir, mejorar o automatizar. Te responderemos con una ruta clara para avanzar.
           </p>
           <div class="contact-links">
@@ -190,27 +208,27 @@
         </div>
         <form class="contact-form" id="contact-form">
           <label>
-            Nombre
-            <input name="name" type="text" placeholder="Tu nombre" required />
+            <span data-i18n="formName">Nombre</span>
+            <input name="name" type="text" placeholder="Tu nombre" required data-i18n-placeholder="formNamePlaceholder" />
           </label>
           <label>
-            Email
+            <span data-i18n="formEmail">Email</span>
             <input name="email" type="email" placeholder="correo@empresa.com" required />
           </label>
           <label>
-            Tipo de proyecto
+            <span data-i18n="formProject">Tipo de proyecto</span>
             <select name="project">
-              <option>Aplicación web</option>
-              <option>API o integración</option>
-              <option>Automatización</option>
-              <option>Consultoría</option>
+              <option data-i18n="projectWeb">Aplicación web</option>
+              <option data-i18n="projectApi">API o integración</option>
+              <option data-i18n="projectAutomation">Automatización</option>
+              <option data-i18n="projectConsulting">Consultoría</option>
             </select>
           </label>
           <label>
-            Mensaje
-            <textarea name="message" rows="5" placeholder="Describe brevemente qué necesitas" required></textarea>
+            <span data-i18n="formMessage">Mensaje</span>
+            <textarea name="message" rows="5" placeholder="Describe brevemente qué necesitas" required data-i18n-placeholder="formMessagePlaceholder"></textarea>
           </label>
-          <button class="button primary" type="submit">Enviar mensaje</button>
+          <button class="button primary" type="submit" data-i18n="formSubmit">Enviar mensaje</button>
           <p class="form-note" id="form-note" role="status"></p>
         </form>
       </section>
@@ -218,10 +236,11 @@
 
     <footer class="site-footer">
       <p>© <span id="year"></span> Novacore Labs. Novacore Systems S.A. de C.V.</p>
-      <a href="#inicio">Volver arriba</a>
+      <a href="#inicio" data-i18n="backTop">Volver arriba</a>
     </footer>
 
     <script src="mail-config.js"></script>
+    <script src="translations.js"></script>
     <script src="script.js"></script>
   </body>
 </html>

@@ -122,6 +122,36 @@ a {
   box-shadow: 0 14px 30px rgba(7, 95, 228, 0.2);
 }
 
+.header-tools {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 12px;
+}
+
+.language-switcher {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--muted);
+  font-size: 0.78rem;
+  font-weight: 800;
+  white-space: nowrap;
+}
+
+.language-switcher select {
+  width: auto;
+  min-width: 118px;
+  height: 40px;
+  padding: 8px 34px 8px 12px;
+  color: var(--ink);
+  background: rgba(255, 255, 255, 0.88);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  font-size: 0.88rem;
+  font-weight: 800;
+}
+
 .menu-button {
   display: none;
   width: 42px;
@@ -528,6 +558,24 @@ textarea:focus {
   margin: 0;
 }
 
+[dir="rtl"] .brand-logo {
+  object-position: right center;
+}
+
+[dir="rtl"] .hero-visual::before {
+  inset: 13% 10% -7% -4%;
+}
+
+[dir="rtl"] .logo-stage {
+  margin-right: auto;
+  margin-left: 0;
+}
+
+[dir="rtl"] .timeline article {
+  border-right: 3px solid var(--blue);
+  border-left: 0;
+}
+
 @media (max-width: 980px) {
   .site-header {
     grid-template-columns: auto auto;
@@ -536,6 +584,14 @@ textarea:focus {
 
   .main-nav,
   .header-action {
+    display: none;
+  }
+
+  .header-tools {
+    gap: 10px;
+  }
+
+  .language-switcher span {
     display: none;
   }
 
@@ -606,6 +662,13 @@ textarea:focus {
 
   .brand-text {
     display: none;
+  }
+
+  .language-switcher select {
+    min-width: 96px;
+    max-width: 32vw;
+    padding-right: 26px;
+    font-size: 0.8rem;
   }
 
   .section,

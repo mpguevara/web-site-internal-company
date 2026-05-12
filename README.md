@@ -10,6 +10,7 @@ El sitio presenta servicios de software empresarial, automatización, integracio
 - Página principal con identidad de Novacore Labs
 - Servicios de desarrollo web, APIs, automatización y consultoría
 - Secciones de experiencia, proceso y contacto
+- Selector multiidioma con español LATAM como idioma predeterminado
 - Formulario que prepara un correo a `mario.paz.software@gmail.com`
 
 ## Desarrollo local
