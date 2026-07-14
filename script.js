@@ -12,6 +12,8 @@ const assistantClose = document.querySelector("#assistant-close");
 const assistantMessages = document.querySelector("#assistant-messages");
 const assistantForm = document.querySelector("#assistant-form");
 const assistantInput = document.querySelector("#assistant-input");
+const assistantHistory = [];
+const ASSISTANT_HISTORY_LIMIT = 8;
 
 year.textContent = new Date().getFullYear();
 
@@ -151,12 +153,21 @@ const addAssistantMessage = (text, type = "assistant") => {
   return message;
 };
 
+const rememberAssistantMessage = (role, content) => {
+  assistantHistory.push({ role, content });
+
+  if (assistantHistory.length > ASSISTANT_HISTORY_LIMIT) {
+    assistantHistory.splice(0, assistantHistory.length - ASSISTANT_HISTORY_LIMIT);
+  }
+};
+
 const resetAssistantWelcome = () => {
   if (!assistantMessages) {
     return;
   }
 
   assistantMessages.innerHTML = "";
+  assistantHistory.length = 0;
   addAssistantMessage(getMessages().assistantWelcome);
 };
 
@@ -191,6 +202,7 @@ assistantForm.addEventListener("submit", async (event) => {
 
   const messages = getMessages();
   addAssistantMessage(text, "user");
+  rememberAssistantMessage("user", text);
   assistantInput.value = "";
   assistantInput.disabled = true;
 
@@ -205,6 +217,7 @@ assistantForm.addEventListener("submit", async (event) => {
       body: JSON.stringify({
         message: text,
         language: languageSelect.value,
+        history: assistantHistory.slice(0, -1),
       }),
     });
 
@@ -219,7 +232,9 @@ assistantForm.addEventListener("submit", async (event) => {
       throw new Error(data.error || "Assistant request failed");
     }
 
-    pending.textContent = data.message || messages.assistantError;
+    const answer = data.message || messages.assistantError;
+    pending.textContent = answer;
+    rememberAssistantMessage("assistant", answer);
   } catch (error) {
     pending.textContent = getMessages().assistantError;
   } finally {

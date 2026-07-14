@@ -376,6 +376,67 @@ h3 {
   background: #fff;
 }
 
+.profile-section {
+  display: grid;
+  grid-template-columns: minmax(0, 0.86fr) minmax(320px, 1fr);
+  gap: clamp(28px, 6vw, 78px);
+  align-items: start;
+  background: #fff;
+}
+
+.profile-copy p {
+  max-width: 680px;
+  color: var(--muted);
+  font-size: 1.08rem;
+}
+
+.profile-panel {
+  position: relative;
+  padding: clamp(24px, 4vw, 36px);
+  overflow: hidden;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.94), rgba(247, 250, 255, 0.96)),
+    radial-gradient(circle at 92% 8%, rgba(16, 191, 232, 0.18), transparent 30%);
+  border: 1px solid rgba(216, 225, 236, 0.95);
+  border-radius: 8px;
+  box-shadow: 0 20px 54px rgba(10, 24, 44, 0.09);
+}
+
+.profile-panel::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  content: "";
+  background: linear-gradient(180deg, var(--blue), var(--teal));
+}
+
+.profile-panel p {
+  margin-bottom: 24px;
+  color: var(--ink);
+  font-size: 1rem;
+}
+
+.profile-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.profile-tags span {
+  display: inline-flex;
+  min-height: 36px;
+  align-items: center;
+  padding: 7px 10px;
+  color: var(--muted);
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  font-size: 0.84rem;
+  font-weight: 800;
+}
+
 .solutions-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -821,6 +882,7 @@ textarea:focus {
   }
 
   .hero,
+  .profile-section,
   .split-section,
   .contact-section {
     grid-template-columns: 1fr;
