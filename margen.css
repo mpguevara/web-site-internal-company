@@ -1,0 +1,115 @@
+/* Horizonte accents from tokens-margen.json, within Novacore's shared layout. */
+.margen-page,
+.margen-product {
+  --margen-brand: #2458a6;
+  --margen-ink: #172c43;
+  --margen-muted: #5a6878;
+  --margen-paper: #f2f5fa;
+  --margen-line: #dfe6f0;
+  --margen-cyan: #1386b4;
+  color: var(--margen-ink);
+}
+.margen-page .eyebrow,
+.margen-product .eyebrow { color: var(--margen-brand); letter-spacing: 0; }
+.margen-page .button.primary,
+.margen-product .button.primary { background: var(--margen-brand); }
+.margen-product .button { gap: 8px; }
+.margen-page .button.primary:hover,
+.margen-product .button.primary:hover { background: #193b67; }
+.margen-page h1 { font-size: 64px; line-height: 1.08; }
+.margen-page h2 { font-size: 40px; line-height: 1.15; }
+.margen-page .section { padding-block: 80px; }
+.margen-page [id],
+.margen-product { scroll-margin-top: 100px; }
+.margen-page p,
+.margen-product p { color: var(--margen-muted); }
+.margen-page .eyebrow,
+.margen-product .eyebrow { color: var(--margen-brand); }
+.margen-page .main-nav a[aria-current] { color: var(--margen-brand); }
+.margen-page a:focus-visible,
+.margen-page button:focus-visible,
+.margen-page summary:focus-visible,
+.margen-product a:focus-visible { outline: 3px solid var(--margen-brand); outline-offset: 5px; }
+.margen-skip { position: fixed; top: 8px; left: 18px; z-index: 50; padding: 12px; background: white; transform: translateY(-150%); }
+.margen-skip:focus { transform: translateY(0); }
+.margen-cover,
+.margen-product { display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(0, .7fr); align-items: center; gap: 60px; background: white; }
+.margen-cover { min-height: min(760px, calc(100svh - 80px)); }
+.margen-cover-copy { max-width: 700px; }
+.margen-identity { display: flex; align-items: center; gap: 18px; margin-bottom: 24px; }
+.margen-identity img { width: 64px; height: 64px; flex: 0 0 64px; border-radius: 8px; }
+.margen-identity h2,
+.margen-identity .margen-name { margin: 0; font-size: 32px; line-height: 1.2; font-weight: 800; color: var(--margen-ink); }
+.margen-product h3 { font-size: 28px; line-height: 1.2; }
+.margen-lead { font-size: 18px; max-width: 620px; }
+.margen-status { display: inline-block; padding: 6px 10px; background: #e2ecfc; color: #193b67 !important; font-size: 13px; font-weight: 700; border-left: 3px solid var(--margen-cyan); }
+.margen-small { font-size: 14px; line-height: 1.6; }
+.margen-storage { max-width: 570px; margin: 24px 0 0; }
+.margen-cover-preview,
+.margen-product-preview { margin: 0; text-align: center; }
+.margen-cover-preview img { width: min(100%, 380px); height: auto; aspect-ratio: 768 / 1350; object-fit: contain; margin-inline: auto; }
+.margen-product-preview img { width: min(100%, 265px); height: auto; aspect-ratio: 768 / 1350; object-fit: contain; margin-inline: auto; }
+.margen-page figcaption,
+.margen-product figcaption { margin-top: 14px; font-size: 13px; line-height: 1.6; color: var(--margen-muted); }
+.margen-cover-preview figcaption span { display: inline-block; max-width: 330px; }
+.margen-section-nav { display: flex; flex-wrap: wrap; gap: 16px 30px; padding: 22px clamp(18px, 5vw, 72px); border-block: 1px solid var(--margen-line); background: #fff; font-size: 14px; font-weight: 600; }
+.margen-section-nav a:hover { text-decoration: underline; }
+.margen-benefit-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 36px; }
+.margen-benefit-grid article { border-top: 1px solid var(--margen-line); padding-top: 24px; }
+.margen-number { display: block; color: var(--margen-brand); font-size: 13px; font-weight: 700; margin-bottom: 16px; }
+.margen-page h3 { font-size: 19px; line-height: 1.4; }
+.margen-functions { background: white; }
+.margen-function-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 32px 48px; }
+.margen-function-grid article { border-left: 3px solid var(--margen-cyan); padding-left: 24px; }
+.margen-function-note { margin: 40px 0 0; max-width: 800px; font-size: 14px; }
+.margen-gallery-section { background: var(--margen-paper); }
+.margen-gallery { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 36px; max-width: 1060px; margin-inline: auto; }
+.margen-gallery figure { margin: 0; text-align: center; }
+.margen-gallery img { width: 100%; height: auto; aspect-ratio: 768 / 1350; object-fit: contain; }
+.margen-gallery figcaption strong { color: var(--margen-ink); font-size: 15px; }
+.margen-steps { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.margen-page .timeline article { border-color: var(--margen-brand); background: var(--margen-paper); }
+.margen-faq-list { max-width: 900px; }
+.margen-faq details { border-bottom: 1px solid var(--margen-line); padding: 22px 0; }
+.margen-faq summary { cursor: pointer; font-weight: 700; font-size: 17px; }
+.margen-faq details p { margin: 16px 0 0; max-width: 780px; }
+.margen-contact { background: #e2ecfc; }
+.margen-contact > p { max-width: 620px; }
+.margen-email { display: block; width: fit-content; margin: 24px 0 12px; text-decoration: underline; overflow-wrap: anywhere; }
+/* The existing navigation gains one product link; collapse before it crowds. */
+@media (min-width: 981px) and (max-width: 1380px) {
+  .site-header { grid-template-columns: auto auto; justify-content: space-between; }
+  .main-nav { display: none; }
+  .menu-button { display: block; }
+  .main-nav.is-open { display: grid; position: absolute; top: 100%; left: 18px; right: 18px; padding: 16px; background: white; border: 1px solid var(--line); border-radius: 8px; }
+}
+@media (max-width: 980px) {
+  .margen-cover,
+  .margen-product { gap: 32px; }
+  .margen-page h1 { font-size: 48px; }
+  .margen-page h2 { font-size: 34px; }
+  .margen-benefit-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .margen-gallery { gap: 18px; }
+  .margen-page .main-nav.is-open { top: 100%; }
+}
+@media (max-width: 640px) {
+  .margen-page .section { padding-block: 52px; }
+  .margen-cover,
+  .margen-product { grid-template-columns: minmax(0, 1fr); gap: 36px; }
+  .margen-page h1 { font-size: 42px; }
+  .margen-page h2 { font-size: 30px; }
+  .margen-lead { font-size: 16px; }
+  .margen-page .hero-actions { flex-wrap: wrap; }
+  .margen-cover-preview img { width: min(100%, 300px); }
+  .margen-gallery { grid-template-columns: minmax(0, 1fr); gap: 36px; max-width: 320px; }
+  .margen-benefit-grid,
+  .margen-function-grid,
+  .margen-steps { grid-template-columns: minmax(0, 1fr); }
+  .margen-section-nav { gap: 14px 20px; }
+  .margen-contact .button { text-align: center; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .margen-page { scroll-behavior: auto; }
+  html:has(.margen-page) { scroll-behavior: auto; }
+  .margen-page *, .margen-product * { transition: none; }
+}

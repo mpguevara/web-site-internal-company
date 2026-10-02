@@ -4,6 +4,7 @@
   "private": true,
   "type": "module",
   "scripts": {
+    "preview": "node server/preview.js",
     "check": "node --check script.js && node --check translations.js && node --check api/contact.js && node --check api/assistant.js"
   },
   "dependencies": {

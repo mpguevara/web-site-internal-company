@@ -181,6 +181,30 @@ Sí, se puede evaluar la integración de facturación electrónica según país,
 
 Una descripción del problema, procesos involucrados, cantidad de usuarios aproximada, si existe un sistema actual, integraciones necesarias y plazo deseado.
 
+## Producto: Margen
+
+Margen (con n al final) es una app Android de gastos y presupuestos personales,
+en desarrollo y pruebas. Presentación: https://novacoresystemssv.vercel.app/margen
+(ruta preparada para la próxima publicación del sitio).
+Registra manualmente saldo inicial, ingresos con origen y gastos. Calcula saldo
+y disponible considerando pagos pendientes y ahorro reservado. Incluye límites,
+compras en pausa de 24 horas, planes de salida, gráficos y recordatorios locales
+configurables sujetos a permisos y ajustes de Android.
+
+Los movimientos se guardan localmente en el dispositivo. No hay sincronización
+entre dispositivos ni respaldo financiero remoto. Firebase Authentication solo
+administra la identidad de acceso. Cambiar de teléfono no recupera movimientos;
+borrar almacenamiento o desinstalar puede hacer perder los datos locales.
+
+No hay publicación confirmada en Google Play, precio aprobado ni fecha de
+lanzamiento. No ofrecer descargas, pagos bancarios, conexión bancaria, anuncios
+reales, lista de espera ni promesas de ahorro o tratamiento clínico. Marcar un
+pendiente como pagado registra un gasto; no ejecuta un pago bancario.
+Las imágenes de la web son prototipos Horizonte con datos de ejemplo, no
+capturas del APK 0.5.0. Privacidad y eliminación siguen pendientes: no afirmar
+que cerrar sesión elimina una cuenta ni inventar rutas o procedimientos finales.
+Para consultas de Margen usar mario.paz.software@gmail.com.
+
 ## Datos de contacto
 
 Correo principal: mario.paz.software@gmail.com
