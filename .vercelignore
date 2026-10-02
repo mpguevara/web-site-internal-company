@@ -1,0 +1,4 @@
+# Internal preparation and local-only preview tools.
+docs/
+scripts/
+server/
