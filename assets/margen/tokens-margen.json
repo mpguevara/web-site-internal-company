@@ -1,0 +1,22 @@
+{
+  "product": "Margen",
+  "theme": "Horizonte",
+  "fontFamily": "DM Sans",
+  "weights": [400, 500, 600, 700],
+  "source": "Margen 0.5.0 src/theme.tsx",
+  "light": {
+    "page": "#F2F5FA", "paper": "#FFFFFF", "ink": "#172C43",
+    "muted": "#5A6878", "brand": "#2458A6", "onBrand": "#FFFFFF",
+    "soft": "#E2ECFC", "line": "#DFE6F0", "hero": "#193B67",
+    "heroText": "#FFFFFF", "warning": "#795700", "warningBg": "#FFF3D7",
+    "danger": "#AF4048", "success": "#287459", "cyan": "#1386B4"
+  },
+  "dark": {
+    "page": "#101D2D", "paper": "#1A2C40", "ink": "#EAF1FC",
+    "muted": "#AFBED1", "brand": "#A9C9FF", "onBrand": "#123361",
+    "soft": "#28415F", "line": "#34465F", "hero": "#193B67",
+    "heroText": "#FFFFFF", "warning": "#FFDA8F", "warningBg": "#493B20",
+    "danger": "#FFAAA8", "success": "#9CDEBC", "cyan": "#38BCE7"
+  },
+  "usage": "Tokens del producto; conservar el sistema visual del sitio Novacore."
+}

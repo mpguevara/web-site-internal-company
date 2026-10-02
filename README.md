@@ -16,6 +16,17 @@ El sitio presenta servicios de software empresarial, automatización, integracio
 
 ## Desarrollo local
 
+Para revisar la presentación estática de Margen y la portada:
+
+```bash
+npm run preview
+```
+
+Abre `http://localhost:3003/margen`. Esta vista no ejecuta las APIs.
+La presentación usa `margen.html` y `cleanUrls` en Vercel, sin router nuevo.
+Los pendientes de privacidad y eliminación están en `docs/margen-publicacion.md`;
+no son documentos públicos finales. La publicación se realiza por separado.
+
 El sitio está preparado para publicarse en Vercel.
 
 Para desarrollo local con la función `/api/contact`:
